@@ -1,0 +1,23 @@
+
+services:
+  - type: web
+    name: miwebservice
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENV
+        value: production
+      - key: API_TITLE
+        value: Mi Web Service
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: miwebservice-db
+          property: connectionString
+
+databases:
+  - name: miwebservice-db
+    plan: free
