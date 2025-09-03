@@ -13,4 +13,4 @@ services:
       - key: ALLOWED_ORIGINS
         value: "*"
       - key: DATABASE_URL
-        value: postgresql+psycopg2://USUARIO:PASS@HOST:5432/NOMBREDB?sslmode=require
+        value: postgresql://practica_3_ihe8_user:un2fsK389bcp6SYphqEQwddPIiSaRWZC@dpg-d2qb42fdiees73cqc75g-a.oregon-postgres.render.com/practica_3_ihe8
